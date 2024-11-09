@@ -3,6 +3,7 @@
 Function to calculate the range of indexes to return in pagination.
 """
 
+
 def index_range(page: int, page_size: int) -> tuple:
     """
     Returns a tuple containing the start and end index for pagination.

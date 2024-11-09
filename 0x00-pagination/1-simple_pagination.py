@@ -37,11 +37,14 @@ class Server:
         return self.__dataset
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
-        """Returns the page of data corresponding to the given page number and page size."""
-        # Assert that page and page_size are integers greater than 0
-        assert isinstance(page, int) and page > 0, "page must be a positive integer"
-        assert isinstance(page_size, int) and page_size > 0, "page_size must be a positive integer"
-
+        """Returns the page of data corresponding to
+        the given page number and page size."""
+        assert (isinstance(page, int) and page > 0), (
+                "page must be a positive integer"
+                )
+        assert (isinstance(page_size, int) and page_size > 0), (
+                "page_size must be a positive integer"
+                )
         # Get the full dataset
         dataset = self.dataset()
 
