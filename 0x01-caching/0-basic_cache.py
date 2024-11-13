@@ -1,10 +1,11 @@
-#!/usr/bin/python3
-""" BaseCaching module
+#!/usr/bin/env python3
+""" Caching system
 """
 from base_caching import BaseCaching
 
 
 class BasicCache(BaseCaching):
+    """BasicCaching module"""
     def __init__(self):
         """Initialize BasicCache."""
         super().__init__()
