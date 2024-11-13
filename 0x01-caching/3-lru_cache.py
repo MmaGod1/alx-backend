@@ -14,7 +14,8 @@ class LRUCache(BaseCaching):
     def put(self, key, item):
         """Add item to cache with LRU replacement if necessary."""
         if key is not None and item is not None:
-            # If key already exists, remove it from the order to update its position
+            """If key already exists,
+            remove it from the order to update its position"""
             if key in self.cache_data:
                 self.order.remove(key)
 
@@ -28,6 +29,10 @@ class LRUCache(BaseCaching):
 
     def get(self, key):
         """Retrieve item from cache by key."""
-        if key is not None:
-            return self.cache_data.get(key)
+        if key is not None and key in self.cache_data:
+            """ Move the accessed key to the end of the order list to
+            mark it as recently used"""
+            self.order.remove(key)
+            self.order.append(key)
+            return self.cache_data[key]
         return None
