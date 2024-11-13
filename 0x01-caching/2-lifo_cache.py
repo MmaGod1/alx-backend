@@ -21,7 +21,6 @@ class LIFOCache(BaseCaching):
             print(f'DISCARD: {last_key}')
 
     def get(self, key):
-    def get(self, key):
         """Retrieve item from cache by key."""
         if key is not None:
             return self.cache_data.get(key)
