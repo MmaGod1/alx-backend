@@ -14,9 +14,10 @@ class LIFOCache(BaseCaching):
     def put(self, key, item):
         """Add item to cache with LIFO replacement if necessary."""
         if key is not None and item is not None:
+            self.cache_data[key] = item
+
             if key not in self.cache_data:
                 self.order.append(key)
-            self.cache_data[key] = item
 
             if len(self.cache_data) > BaseCaching.MAX_ITEMS:
                 last_key = self.order.pop()
