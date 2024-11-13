@@ -11,6 +11,7 @@ class LIFOCache(BaseCaching):
         super().__init__()
 
     def put(self, key, item):
+        """Add item to cache with LIFO replacement if necessary."""
         if key is None or item is None:
             return
         self.cache_data[key] = item
