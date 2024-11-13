@@ -4,7 +4,7 @@
 from base_caching import BaseCaching
 
 
-class FIFOCache(BaseCaching):
+class LIFOCache(BaseCaching):
     """ LIFO cache module."""
     def __init__(self):
         """Initialize LIFOCache."""
