@@ -10,7 +10,6 @@ class LFUCache(BaseCaching):
         """ Initialize LFUCache """
         super().__init__()
         self.frequency = defaultdict(int)  # Store frequency of each key
-        # Store keys in LRU order within each frequency level
         self.order = OrderedDict()
 
     def put(self, key, item):
@@ -19,7 +18,6 @@ class LFUCache(BaseCaching):
             return
 
         if key in self.cache_data:
-            # pop() existing key, from its current frequency level in `order`
             self.order.pop(key)
         elif len(self.cache_data) >= BaseCaching.MAX_ITEMS:
             # Find the key with the lowest frequency
@@ -33,7 +31,6 @@ class LFUCache(BaseCaching):
             del self.frequency[discard_key]
             print(f"DISCARD: {discard_key}")
 
-        # Add or update the key with the new item
         self.cache_data[key] = item
         self.frequency[key] += 1  # Increment frequency
         self.order[key] = True  # Add to order to mark as most recently used
