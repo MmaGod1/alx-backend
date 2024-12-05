@@ -17,7 +17,7 @@ client.hset('HolbertonSchools', 'Bogota', '20', print);
 client.hset('HolbertonSchools', 'Cali', '40', print);
 client.hset('HolbertonSchools', 'Paris', '2', print);
 
-client.hgetall('HolbertonSchools', (error, values) => {
+client.hgetall('HolbertonSchools', (err, values) => {
   if (err) {
     console.log(err);
     throw err;
