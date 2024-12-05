@@ -14,7 +14,7 @@ const channel = 'ALXchannel';
 client.subscribe(channel);
 
 client.on('message', (channel, message) => {
-  console.log(`Received message: ${message}`);
+  console.log(`${message}`);
   
   if (message === 'KILL_SERVER') {
     client.unsubscribe(channel);

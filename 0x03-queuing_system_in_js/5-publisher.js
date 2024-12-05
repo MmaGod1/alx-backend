@@ -12,7 +12,7 @@ client.on('error', (err) => {
 
 function publishMessage(message, time) {
   setTimeout(() => {
-    console.log(`About to send message: ${message}`);
+    console.log(`About to send ${message}`);
     client.publish('ALXchannel', message);
   }, time);
 }
